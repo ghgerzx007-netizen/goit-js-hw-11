@@ -23,9 +23,9 @@ gallery.innerHTML = '';
 
 const loader = document.querySelector('.loader')
  export function showLoader(){
-loader.classList.add('.is-visible')
+loader.classList.add('is-visible')
 }
 
  export function hideLoader(){
-loader.classList.remove('.is-visible')
+loader.classList.remove('is-visible')
 }
