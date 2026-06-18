@@ -1,5 +1,12 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
+const lightbox = new SimpleLightbox('.gallery a');
+const gallery = document.querySelector(".gallery");
+const loader = document.querySelector('.loader');
+
 export function createGallery(images) {
-  return images
+  const markup = images
     .map(
       image => `
         <li>
@@ -14,18 +21,19 @@ export function createGallery(images) {
       `
     )
     .join('');
+
+  gallery.innerHTML = markup;
+  lightbox.refresh();
 }
 
- export function clearGallery(){
-const gallery = document.querySelector('.gallery')
-gallery.innerHTML = '';
+export function clearGallery() {
+  gallery.innerHTML = '';
 }
 
-const loader = document.querySelector('.loader')
- export function showLoader(){
-loader.classList.add('is-visible')
+export function showLoader() {
+  loader.classList.add('is-visible');
 }
 
- export function hideLoader(){
-loader.classList.remove('is-visible')
+export function hideLoader() {
+  loader.classList.remove('is-visible');
 }
