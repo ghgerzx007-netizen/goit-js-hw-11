@@ -1,12 +1,12 @@
-import{a as l,S as c,i as u}from"./assets/vendor-b6X63ke0.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))s(r);new MutationObserver(r=>{for(const t of r)if(t.type==="childList")for(const i of t.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&s(i)}).observe(document,{childList:!0,subtree:!0});function n(r){const t={};return r.integrity&&(t.integrity=r.integrity),r.referrerPolicy&&(t.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?t.credentials="include":r.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function s(r){if(r.ep)return;r.ep=!0;const t=n(r);fetch(r.href,t)}})();function f(o){return o.map(e=>`
+import{S as u,a as f,i as a}from"./assets/vendor-CvMI5-Em.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const i of o.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&n(i)}).observe(document,{childList:!0,subtree:!0});function r(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function n(e){if(e.ep)return;e.ep=!0;const o=r(e);fetch(e.href,o)}})();const d=new u(".gallery a"),c=document.querySelector(".gallery"),l=document.querySelector(".loader");function m(s){const t=s.map(r=>`
         <li>
-          <a href="${e.largeImageURL}">
-            <img src="${e.webformatURL}" alt="${e.tags}" />
+          <a href="${r.largeImageURL}">
+            <img src="${r.webformatURL}" alt="${r.tags}" />
           </a>
-          <p>Likes: ${e.likes}</p>
-          <p>Views: ${e.views}</p>
-          <p>Comments: ${e.comments}</p>
-          <p>Downloads: ${e.downloads}</p>
+          <p>Likes: ${r.likes}</p>
+          <p>Views: ${r.views}</p>
+          <p>Comments: ${r.comments}</p>
+          <p>Downloads: ${r.downloads}</p>
         </li>
-      `).join("")}function d(){const o=document.querySelector(".gallery");o.innerHTML=""}const a=document.querySelector(".loader");function m(){a.classList.add("is-visible")}function p(){a.classList.remove("is-visible")}function y(o){return l.get("https://pixabay.com/api/",{params:{q:o,key:"56332607-bb747eac8cf621789c682c14a",image_type:"photo",orientation:"horizontal",safesearch:!0}}).then(e=>e.data)}const h=new c(".gallery a"),g=document.querySelector(".gallery"),L=document.querySelector(".form");L.addEventListener("submit",o=>{o.preventDefault();const e=document.querySelector('[name="search-text"]');if(e.value.trim()==="")return;const n=e.value.trim();d(),m(),y(n).then(s=>{const r=s.hits;if(r.length===0){u.error({message:"Sorry, there are no images matching your search query. Please try again!"}),e.value="";return}else{const t=f(r);g.innerHTML=t,h.refresh(),e.value=""}}).catch(s=>{console.log(s)}).finally(()=>{p(),e.value=""})});
+      `).join("");c.innerHTML=t,d.refresh()}function p(){c.innerHTML=""}function y(){l.classList.add("is-visible")}function h(){l.classList.remove("is-visible")}function g(s){return f.get("https://pixabay.com/api/",{params:{q:s,key:"56332607-bb747eac8cf621789c682c14a",image_type:"photo",orientation:"horizontal",safesearch:!0}}).then(t=>t.data)}const L=document.querySelector(".form");L.addEventListener("submit",s=>{s.preventDefault();const t=document.querySelector('[name="search-text"]');if(t.value.trim()==="")return;const r=t.value.trim();p(),y(),g(r).then(n=>{const e=n.hits;if(e.length===0){a.error({message:"Sorry, there are no images matching your search query. Please try again!"});return}m(e)}).catch(n=>{a.error({message:n.message||"Something went wrong. Please try again."})}).finally(()=>{h(),t.value=""})});
 //# sourceMappingURL=index.js.map
